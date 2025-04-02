@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #1e1e1d;
+  padding: 20px;
+}
+
+.logo {
+  color:wheat;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  color: wheat;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #181818;
+}
+
+#search-bar {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: wheat;
+  color: black;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#username {
+  margin-right: 10px;
+}
+
+#user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login-btn, .signup-btn, .logout-btn, .settings-link {
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: wheat;
+  border: 1px solid wheat;
+}
+
+.signup-btn {
+  background-color: wheat;
+  color: #121212;
+  border: 1px solid wheat;
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.settings-link {
+  color: wheat;
+  font-size: 16px;
+}
+
+.login-btn:hover, .signup-btn:hover, .logout-btn:hover, .settings-link:hover {
+  opacity: 0.8;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: wheat;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.grid-item {
+  background-color:#1c1b1b;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  background-color: wheat;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.grid-item-info {
+  padding: 10px;
+}
+
+.grid-item-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.grid-item-subtitle {
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+.now-playing-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #181818;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+}
+
+.song-info img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: wheat;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.player-controls button:hover {
+  color: white;
+}
+
+#play-pause-button {
+  font-size: 32px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #535353;
+  margin: 0 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: wheat;
+  transition: width 0.1s linear;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+}
+
+.volume-control i {
+  margin-right: 10px;
+}
+
+#volume-slider {
+  width: 100px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #535353;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f7f7f;
+}
+ .logo{
+    color: bisque;
+}
+/* insync logo*/
+#logo-text {
+  display: flex;
+  align-items: self-start;
+}
+
+#logo {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Section headers with action buttons */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  background-color: wheat;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  background-color: #e6d9bc;
+}
+
+/* Cart count badge */
+.cart-count {
+  display: inline-block;
+  background-color: wheat;
+  color: #121212;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.file-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.file-input-container input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 200px; /* Limit width to file input button area */
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: wheat;
+  color: #121212;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#selected-file {
+  color: #aaa;
+  margin-right: 15px;
+}
+
+.upload-btn {
+    padding: 15px 20px;
+   margin-bottom: 30px;
+    background-color: wheat;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold
+}
+
+.upload-btn:hover {
+  background-color: #e6d9bc;
+}
+.save-btn {
+  margin-bottom: 40px;
+}
+/* Social Features Styles */
+.like-btn, .share-btn, .follow-btn, .buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.like-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.like-btn.liked {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.share-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.follow-btn {
+  background-color: transparent;
+  color: wheat;
+  border: 1px solid wheat;
+}
+
+.follow-btn.following {
+  background-color: wheat;
+  color: #121212;
+}
+
+.buy-btn {
+  background-color: #6bff6b;
+  color: #121212;
+  border: none;
+}
+
+.grid-item-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.grid-item:hover .grid-item-actions {
+  opacity: 1;
+}
+
+.delete-btn {
+  background-color: rgba(255, 107, 107, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 107, 107, 1);
+}
